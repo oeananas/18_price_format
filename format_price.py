@@ -14,4 +14,4 @@ if __name__ == '__main__':
     if len(sys.argv) == 1:
         exit('you need to enter parameter')
     price = sys.argv[1]
-    print(format_price(54564.956456))
+    print(format_price(price))
