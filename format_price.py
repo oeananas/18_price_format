@@ -2,21 +2,15 @@ import sys
 
 
 def format_price(price):
-    if type(price) is str:
-        try:
-            float_price = float('{0:.2f}'.format(float(price)))
-        except ValueError:
-            return None
-        price_parts = str(float_price).split('.')
-        whole_part, fract_part = price_parts[0], price_parts[1]
-        if not float_price.is_integer():
-            pretty_price = '{:,}.{}'.format(
-                int(whole_part),
-                fract_part
-            ).replace(',', ' ')
-        else:
-            pretty_price = '{:,}'.format(int(whole_part)).replace(',', ' ')
-        return pretty_price
+    try:
+        float_price = float('{}'.format(float(price)))
+    except(ValueError, TypeError):
+        return None
+    if not float_price.is_integer():
+        pretty_price = '{:,.2f}'.format(float(float_price), ).replace(',', ' ')
+    else:
+        pretty_price = '{:,}'.format(int(float_price), ).replace(',', ' ')
+    return pretty_price
 
 
 if __name__ == '__main__':
