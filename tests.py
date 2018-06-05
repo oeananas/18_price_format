@@ -26,23 +26,23 @@ class FormatPriceTestCase(unittest.TestCase):
 
     def test_pos_int_number(self):
         pretty_price = format_price(456700)
-        self.assertIsNone(pretty_price)
+        self.assertEqual(pretty_price, '456 700')
 
     def test_neg_int_number(self):
         pretty_price = format_price(-6530000)
-        self.assertIsNone(pretty_price)
+        self.assertEqual(pretty_price, '-6 530 000')
 
     def test_pos_float_number_without_fraction(self):
         pretty_price = format_price(3245.000000)
-        self.assertIsNone(pretty_price)
+        self.assertEqual(pretty_price, '3 245')
 
     def test_pos_float_number_with_fraction(self):
         pretty_price = format_price(3245.68000)
-        self.assertIsNone(pretty_price)
+        self.assertEqual(pretty_price, '3 245.68')
 
     def test_neg_float_number(self):
         pretty_price = format_price(-7845.63000)
-        self.assertIsNone(pretty_price)
+        self.assertEqual(pretty_price, '-7 845.63')
 
     def test_str_not_number_price(self):
         pretty_price = format_price('Hello!')
