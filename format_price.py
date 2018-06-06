@@ -3,7 +3,7 @@ import sys
 
 def format_price(price):
     try:
-        float_price = float(str(price))
+        float_price = round(float(str(price)), 2)
     except(ValueError, TypeError):
         return None
     if float_price.is_integer():
