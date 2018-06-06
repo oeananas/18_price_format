@@ -6,7 +6,10 @@ def format_price(price):
         float_price = float(str(price))
     except(ValueError, TypeError):
         return None
-    pretty_price = '{:,.0f}'.format(float_price).replace(',', ' ')
+    if float_price.is_integer():
+        pretty_price = '{:,.0f}'.format(float_price).replace(',', ' ')
+    else:
+        pretty_price = '{:,.2f}'.format(float_price).replace(',', ' ')
     return pretty_price
 
 
