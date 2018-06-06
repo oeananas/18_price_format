@@ -38,7 +38,7 @@ print(format_price(price4))
 ```
 output:
 ```bash
-None
+123 888
 None
 99 345
 6 788 999
