@@ -18,6 +18,9 @@ python3 format_price.py 35889787
 
 python3 format_price.py -546788
 -546 788
+
+python3 format_price.py 43222345.6566
+43 222 345.66
 ```
 launch on program:
 ```python3
